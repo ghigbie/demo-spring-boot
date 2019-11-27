@@ -1,9 +1,6 @@
 package higbie.com.demo.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/greeting")
@@ -21,7 +18,7 @@ public class HelloController {
 
     @RequestMapping("/user_entry")
     public String userForm(){
-        return "<form action=\"/user_greeting\" method=\"POST\">\n" +
+        return "<form action=\"/greeting/user_greeting\" method=\"POST\">\n" +
                 "  First name:<br>\n" +
                 "  <input type=\"text\" name=\"firstname\" value=\"Mickey\">\n" +
                 "  <br>\n" +
@@ -29,12 +26,12 @@ public class HelloController {
                 "  <input type=\"text\" name=\"lastname\" value=\"Mouse\">\n" +
                 "  <br><br>\n" +
                 "  <input type=\"submit\" value=\"Submit\">\n" +
-                "</form> "
+                "</form> ";
 
     }
 
-    @RequestMapping(value="/user_entry", method=RequestMethod.POST)
-    public String printUserGreeting(){
-        return"";
+    @RequestMapping(value="/user_greeting", method=RequestMethod.POST)
+    public String printUserGreeting(@RequestParam String firstname, String lastname){
+        return "<h1>Hello there, "+ firstname + " " + lastname + "</h1>";
     }
 }
