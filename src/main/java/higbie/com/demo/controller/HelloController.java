@@ -18,4 +18,23 @@ public class HelloController {
     public String sayProperHello(){
         return "<h1>Hello properly</h1>";
     }
+
+    @RequestMapping("/user_entry")
+    public String userForm(){
+        return "<form action=\"/user_greeting\" method=\"POST\">\n" +
+                "  First name:<br>\n" +
+                "  <input type=\"text\" name=\"firstname\" value=\"Mickey\">\n" +
+                "  <br>\n" +
+                "  Last name:<br>\n" +
+                "  <input type=\"text\" name=\"lastname\" value=\"Mouse\">\n" +
+                "  <br><br>\n" +
+                "  <input type=\"submit\" value=\"Submit\">\n" +
+                "</form> "
+
+    }
+
+    @RequestMapping(value="/user_entry", method=RequestMethod.POST)
+    public String printUserGreeting(){
+        return"";
+    }
 }
