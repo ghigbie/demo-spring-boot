@@ -34,4 +34,9 @@ public class HelloController {
     public String printUserGreeting(@RequestParam String firstname, String lastname){
         return "<h1>Hello there, "+ firstname + " " + lastname + "</h1>";
     }
+
+    @RequestMapping(value="/orders/{id}", method=RequestMethod.GET)
+    public String getOrder(@PathVariable String id){
+        return "Order ID: " + id;
+    }
 }
