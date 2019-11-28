@@ -32,6 +32,10 @@ public class UserController {
 
     @RequestMapping("/{userId}/products_as_json")
     public List<Product> displayProductsJson() {
-        return Arrays.asList("Shoes", "laptop", "button");
+        return Arrays.asList(
+                new Product(1, "shoes", 42.99),
+                new Product(2, "laptop", 142.99),
+                new Product(2, "bulldog", 242.99)
+               );
     }
 }
