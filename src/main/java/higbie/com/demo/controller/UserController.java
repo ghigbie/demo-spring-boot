@@ -1,5 +1,6 @@
 package higbie.com.demo.controller;
 
+import higbie.com.demo.domain.Product;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,7 +31,7 @@ public class UserController {
     }
 
     @RequestMapping("/{userId}/products_as_json")
-    public List<Product> displayProductsJson(){
+    public List<Product> displayProductsJson() {
         return Arrays.asList("Shoes", "laptop", "button");
     }
 }
