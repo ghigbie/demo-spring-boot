@@ -15,7 +15,7 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping(value="/create", method= RequestMethod.POST)
+    @RequestMapping(value="/create", method=RequestMethod.POST)
     public String processFormData(){
         return "Form done!";
     }
