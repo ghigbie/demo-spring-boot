@@ -11,8 +11,8 @@ public class HomeController {
 
     @RequestMapping("/")
     public String home(Model model){
-        model.addAttribute("formDate", new User());
-        return "index";
+        model.addAttribute("formData", new User());
+        return "index.html";
     }
 
     @RequestMapping(value="/create", method=RequestMethod.POST)

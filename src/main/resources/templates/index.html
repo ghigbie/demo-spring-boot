@@ -7,7 +7,7 @@
 <body>
     <h1>home</h1>
     <h3>Enter data below:</h3>
-    <form action="/create" method="POST" th:object="${formData}}">
+    <form action="/create" method="POST" th:object="${formData}">
         <p>Full Name: <input type="text" th:field="${formData.fullName}"/></p>
         <p>Age: <input type="text" th:field="${formData.age}"/></p>
         <p>Employed: <input type="checkbox" th:field="${formData.employed}" th:value="true"/></p>
